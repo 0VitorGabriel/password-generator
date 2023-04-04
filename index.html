@@ -15,10 +15,10 @@
                 <h1>Gerador de senhas</h1>
 
                 <p>tamanho minino: 8 caracteres</p>
-                <p>tamanho maximo: 24 caracteres</p>
+                <p>tamanho maximo: 20 caracteres</p>
 
                 <form>
-                    <input type="range" name="password_length" id="password_length" min="8" max="24" value="8"> <output>8</output> <br>
+                    <input type="range" name="password_length" id="password_length" min="8" max="20" value="8"> <output>8</output> <br>
 
                     <label for="uppercase">
                         letras maiúsculas: 
@@ -46,6 +46,11 @@
 
                     <input type="submit" value="gerar senha" id="generate_password_button">
                 </form>
+                <div class="area_password">
+                    <h1 id="generated_password_area">
+
+                    </h1>
+                </div>
             </section>
         </article>
     </main>

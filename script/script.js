@@ -12,8 +12,12 @@ const characters_list = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012
 
 const area_password = document.querySelector('h1#generated_password_area')
 
+const button_copy_password = document.querySelector('input[type = button]')
+
 generate_password_button.addEventListener('click', function generate_password (event) {
     event.preventDefault()
+
+    button_copy_password.classList.add('show_button')
 
     let random_character = ''
 

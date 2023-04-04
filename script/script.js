@@ -31,3 +31,9 @@ generate_password_button.addEventListener('click', function generate_password (e
 
     area_password.innerHTML = random_character
 })
+
+button_copy_password.addEventListener('click', function copy_password() {
+    navigator.clipboard.writeText(area_password.innerHTML)
+
+    alert('senha copiada para a área de transferência')
+})

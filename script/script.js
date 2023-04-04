@@ -10,6 +10,8 @@ const generate_password_button = document.querySelector('input#generate_password
 
 const characters_list = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
+const area_password = document.querySelector('h1#generated_password_area')
+
 generate_password_button.addEventListener('click', function generate_password (event) {
     event.preventDefault()
 
@@ -22,4 +24,6 @@ generate_password_button.addEventListener('click', function generate_password (e
             )
         )
     }
+
+    area_password.innerHTML = random_character
 })

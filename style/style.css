@@ -23,5 +23,27 @@ main {
 
     border-radius: 20px;
 
-    transform: translate(-50%, 150%);
+    transform: translate(-50%, 100%);
+}
+
+#area_password_generator > h1 {
+    text-align: center;
+    font-size: 1.7em;
+
+    padding-bottom: 15px;
+}
+
+#area_password_generator > p {
+    padding-bottom: 10px;
+}
+
+#area_password_generator > form > input[type = range] {
+    width: 80%;
+}
+
+#area_password_generator > form > input[type = submit] {
+    display: block;
+    margin: 10px auto 0px auto;
+    width: 80%;
+    padding: 5px;
 }

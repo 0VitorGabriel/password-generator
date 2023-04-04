@@ -2,4 +2,26 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #5A61A0;
+    position: relative;
+}
+
+main {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, 150%);
+
+    background-color: #ffffff;
+
+    width: 400px;
+    padding: 20px;
+
+    border-radius: 20px;
 }

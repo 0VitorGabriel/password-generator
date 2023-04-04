@@ -16,12 +16,12 @@ main {
     top: 50%;
     left: 50%;
 
-    transform: translate(-50%, 150%);
-
     background-color: #ffffff;
 
     width: 400px;
     padding: 20px;
 
     border-radius: 20px;
+
+    transform: translate(-50%, 150%);
 }

@@ -1,12 +1,16 @@
 const password_length_input = document.querySelector('input#password_length')
 
+password_length_input.addEventListener('input', show_password_length)
+
 const password_length_output = document.querySelector('output')
 
-password_length_input.addEventListener('input', function show_password_length() {
+function show_password_length() {
     password_length_output.innerHTML = Number(password_length_input.value)
-})
+}
 
 const generate_password_button = document.querySelector('input#generate_password_button')
+
+generate_password_button.addEventListener('click', generate_password)
 
 const characters_list = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
@@ -14,7 +18,7 @@ const area_password = document.querySelector('h1#generated_password_area')
 
 const button_copy_password = document.querySelector('input[type = button]')
 
-generate_password_button.addEventListener('click', function generate_password (event) {
+function generate_password(event) {
     event.preventDefault()
 
     button_copy_password.classList.add('show_button')
@@ -30,10 +34,12 @@ generate_password_button.addEventListener('click', function generate_password (e
     }
 
     area_password.innerHTML = random_character
-})
+}
 
-button_copy_password.addEventListener('click', function copy_password() {
+button_copy_password.addEventListener('click', copy_password)
+
+function copy_password() {
     navigator.clipboard.writeText(area_password.innerHTML)
 
     alert('senha copiada para a área de transferência')
-})
+}

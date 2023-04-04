@@ -1,3 +1,3 @@
 # gerador de senhas
 
-prints:
+prints do projeto:

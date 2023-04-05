@@ -20,32 +20,32 @@ generate_password_button.addEventListener('click', verify_button_click)
 function verify_button_click(event) {
     event.preventDefault()
 
+    const characters_list = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    const characters_list_numbers = '0123456789'
+    const characters_list_symbols = '!@#$%¨&*()'
+
     button_copy_password.classList.add('show_button')
 
     let random_character = ''
 
     if (button_uppercase.checked) {
-        generate_password_uppercase(random_character)
+        generate_password_uppercase(random_character, characters_list)
     } else if (button_lowercase.checked) {
-        generate_password_lowercase(random_character)
+        generate_password_lowercase(random_character, characters_list)
     } else if (button_numbers.checked) {
-        generate_password_numbers(random_character)
+        generate_password_numbers(random_character, characters_list_numbers)
     } else if (button_symbols.checked) {
-        generate_password_symbols(random_character)
+        generate_password_symbols(random_character, characters_list_symbols)
     } else {
-        generate_password_normal(random_character)
+        generate_password_normal(random_character, characters_list)
     }
 }
-
-const characters_list = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-const characters_list_numbers = '0123456789'
-const characters_list_symbols = '!@#$%¨&*()'
 
 const area_password = document.querySelector('h1#generated_password_area')
 
 const button_copy_password = document.querySelector('input[type = button]')
 
-function generate_password_normal(random_character) {
+function generate_password_normal(random_character, characters_list) {
     for (let i = 0; i < password_length_input.value; i++) {
         random_character += characters_list.charAt(
             Math.floor(
@@ -57,7 +57,7 @@ function generate_password_normal(random_character) {
     area_password.innerHTML = random_character
 }
 
-function generate_password_uppercase(random_character) {
+function generate_password_uppercase(random_character, characters_list) {
     for (let i = 0; i < password_length_input.value; i++) {
         random_character += characters_list.charAt(
             Math.floor(
@@ -69,7 +69,7 @@ function generate_password_uppercase(random_character) {
     area_password.innerHTML = random_character
 }
 
-function generate_password_lowercase(random_character) {
+function generate_password_lowercase(random_character, characters_list) {
     for (let i = 0; i < password_length_input.value; i++) {
         random_character += characters_list.charAt(
             Math.floor(
@@ -81,7 +81,7 @@ function generate_password_lowercase(random_character) {
     area_password.innerHTML = random_character
 }
 
-function generate_password_numbers(random_character) {
+function generate_password_numbers(random_character, characters_list_numbers) {
     for (let i = 0; i < password_length_input.value; i++) {
         random_character += characters_list_numbers.charAt(
             Math.floor(
@@ -93,7 +93,7 @@ function generate_password_numbers(random_character) {
     area_password.innerHTML = random_character
 }
 
-function generate_password_symbols(random_character) {
+function generate_password_symbols(random_character, characters_list_symbols) {
     for (let i = 0; i < password_length_input.value; i++) {
         random_character += characters_list_symbols.charAt(
             Math.floor(

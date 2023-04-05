@@ -8,6 +8,11 @@ function show_password_length() {
     password_length_output.innerHTML = Number(password_length_input.value)
 }
 
+const button_uppercase = document.querySelector('input#uppercase')
+const button_lowecase = document.querySelector('input#lowercase')
+const button_numbers = document.querySelector('input#numbers')
+const button_symbols = document.querySelector('input#symbols')
+
 const generate_password_button = document.querySelector('input#generate_password_button')
 
 generate_password_button.addEventListener('click', generate_password)
@@ -20,20 +25,19 @@ const button_copy_password = document.querySelector('input[type = button]')
 
 function generate_password(event) {
     event.preventDefault()
+        button_copy_password.classList.add('show_button')
 
-    button_copy_password.classList.add('show_button')
+        let random_character = ''
 
-    let random_character = ''
-
-    for (let i = 0; i < password_length_input.value; i++) {
-        random_character += characters_list.charAt(
-            Math.floor(
-                Math.random() * characters_list.length
+        for (let i = 0; i < password_length_input.value; i++) {
+            random_character += characters_list.charAt(
+                Math.floor(
+                    Math.random() * characters_list.length
+                )
             )
-        )
-    }
+        }
 
-    area_password.innerHTML = random_character
+        area_password.innerHTML = random_character
 }
 
 button_copy_password.addEventListener('click', copy_password)
